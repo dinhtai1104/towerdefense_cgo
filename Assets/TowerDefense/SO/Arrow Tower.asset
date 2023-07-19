@@ -16,3 +16,4 @@ MonoBehaviour:
   Cooldown: 1
   TowerType: 0
   RangeAttack: 3
+  SpeedProjectile: 7

@@ -13,16 +13,25 @@ public class Enemy : MonoBehaviour
 {
     public EnemySO enemySO;
     public MoveComponent movement;
-    public float Hp;
+    public HealthComponent health;
 
-
-    private void Start()
+    public void SetData(EnemySO data)
     {
-        StartMove();
+        this.enemySO = data;
+    }
+    public void Init()
+    {
+        health.SetHp(enemySO.Hp);
+        movement.Set(enemySO.Speed);
     }
 
-    public void StartMove()
+    public void TakeDamage(float dmg)
     {
-        movement.Set(enemySO.Speed);
+        health.TakeDamage(dmg);
+    }
+
+    public float GetDmg()
+    {
+        return enemySO.Dmg;
     }
 }

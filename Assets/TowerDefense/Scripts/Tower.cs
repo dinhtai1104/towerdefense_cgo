@@ -10,13 +10,28 @@ public enum ETower
 
 public class Tower : MonoBehaviour
 {
+    public int levelCurrent = 1;
     public TowerSO towerSO;
+    public TowerLevelUpSO towerData;
     public Transform ShotPos;
 
     public AttackComponent attackComponent;
     private void Start()
     {
-        attackComponent.Setup(towerSO.Dmg, towerSO.Cooldown, towerSO.RangeAttack, ShotPos);
+        float dmg = towerSO.Dmg;
+        float cooldown = towerSO.Cooldown;
+        float rangeAttack = towerSO.RangeAttack;
+        float speed = towerSO.SpeedProjectile;
+
+        // Modify data depends on level
+        for (int i = 0; i < levelCurrent; i++)
+        {
+            dmg += towerData.LevelUp[i].DmgIncrease;
+            speed += towerData.LevelUp[i].SpeedIncrease;
+        }
+
+
+        attackComponent.Setup(dmg, cooldown, rangeAttack, speed, ShotPos);
     }
 
 

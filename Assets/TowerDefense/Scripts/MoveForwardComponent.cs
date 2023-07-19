@@ -8,6 +8,12 @@ public class MoveForwardComponent : MonoBehaviour
     public float timeDestroy;
 
     private float timeDestroyCurrent = 0;
+
+    public void SetSpeed(float speed)
+    {
+        this.speed = speed;
+    }
+
     private void Update()
     {
         timeDestroyCurrent += Time.deltaTime;

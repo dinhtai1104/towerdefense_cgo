@@ -9,10 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 777da3c350625d346be692f004cb8eb3, type: 3}
-  m_Name: Goblin 2
+  m_Script: {fileID: 11500000, guid: d8339909c691b8b4b90f0778087235d7, type: 3}
+  m_Name: Wave
   m_EditorClassIdentifier: 
-  Speed: 1.5
-  Hp: 50
-  Dmg: 10
-  EnemyType: 1
+  waves:
+  - Amount: 10
+    TimeSpawn: 0
+  - Amount: 6
+    TimeSpawn: 5
+  - Amount: 5
+    TimeSpawn: 10

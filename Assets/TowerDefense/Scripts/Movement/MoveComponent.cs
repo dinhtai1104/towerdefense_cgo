@@ -6,7 +6,6 @@ using UnityEngine;
 public class MoveComponent : MonoBehaviour
 {
     public float speed = 2f;
-    public List<Path> AllPath;
     private Path path;
     private List<Vector3> Path = new List<Vector3>();
     // start: Path[i]
@@ -19,10 +18,13 @@ public class MoveComponent : MonoBehaviour
     public int currentIndex = 0;
     private bool isReached = false;
 
+    public void SetPath(Path path)
+    {
+        this.path = path;
+    }
     public void Set(float speed)
     {
         this.speed = speed;
-        path = AllPath[UnityEngine.Random.Range(0, AllPath.Count)];
         Path = new List<Vector3>();
         Path = path.GetListPosition();
         transform.position = Path[0];

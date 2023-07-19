@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 2
   Hp: 50
-  Dmg: 2
+  Dmg: 10
   EnemyType: 1
