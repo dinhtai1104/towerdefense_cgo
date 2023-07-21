@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 152360213329658780}
   - component: {fileID: 152360213329658851}
   m_Layer: 0
-  m_Name: Tower
+  m_Name: Tower 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -163,7 +163,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300022, guid: 2d97cb46c9f04974e82cefaf95c4cf81, type: 3}
+  m_Sprite: {fileID: 21300026, guid: 2d97cb46c9f04974e82cefaf95c4cf81, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
