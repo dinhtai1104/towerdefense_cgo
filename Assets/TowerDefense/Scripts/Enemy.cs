@@ -11,9 +11,16 @@ public enum EEnemy
 
 public class Enemy : MonoBehaviour
 {
+    public static int id = 0;
+    public int Identity;
     public EnemySO enemySO;
     public MoveComponent movement;
     public HealthComponent health;
+
+    private void Awake()
+    {
+        Identity = id++;
+    }
 
     public void SetData(EnemySO data)
     {

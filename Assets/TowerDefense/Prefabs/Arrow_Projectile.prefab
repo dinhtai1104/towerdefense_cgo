@@ -94,6 +94,7 @@ GameObject:
   - component: {fileID: 1262173088}
   - component: {fileID: 8873095405120569166}
   - component: {fileID: 7264886415125130463}
+  - component: {fileID: 4393425508261693258}
   m_Layer: 0
   m_Name: Arrow_Projectile
   m_TagString: Untagged
@@ -170,3 +171,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Dmg: 0
   MoveForward: {fileID: 1262173088}
+  IdentityId: 0
+  targetPos: {x: 0, y: 0, z: 0}
+  towerType: 0
+  animator: {fileID: 4393425508261693258}
+  isReached: 0
+--- !u!95 &4393425508261693258
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4453438025390417739}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 50805e2bb3161446caeb8ddc0dfc712b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

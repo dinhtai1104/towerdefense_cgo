@@ -31,7 +31,7 @@ public class Tower : MonoBehaviour
         }
 
 
-        attackComponent.Setup(dmg, cooldown, rangeAttack, speed, ShotPos);
+        attackComponent.Setup(dmg, cooldown, rangeAttack, speed, ShotPos.parent, this.towerSO.TowerType);
     }
 
 

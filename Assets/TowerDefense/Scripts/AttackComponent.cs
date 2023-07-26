@@ -19,11 +19,13 @@ public class AttackComponent : MonoBehaviour // Ability
     public GameObject Projectile;
     private Transform ShotPos;
     private Transform enemy;
+    public ETower towerType;
 
     private float timeShoot = 0;
 
-    public void Setup(float Dmg, float Cooldown, float RangeAttack, float SpeedProjectile, Transform ShotPos)
+    public void Setup(float Dmg, float Cooldown, float RangeAttack, float SpeedProjectile, Transform ShotPos, ETower towerType)
     {
+        this.towerType = towerType;
         this.Dmg = Dmg;
         this.Cooldown = Cooldown;
         this.RangeAttack = RangeAttack;
@@ -49,10 +51,19 @@ public class AttackComponent : MonoBehaviour // Ability
 
     private void SpawnProjectile()
     {
-        var projectile = Instantiate(Projectile);
+        //code old  var projectile = Instantiate(Projectile);
+        var projectile = ArrowPooling.Instance.GetObject();
+        projectile.gameObject.SetActive(true);
         projectile.transform.position = ShotPos.position;
 
+        int enemyIdentity = enemy.GetComponent<Enemy>().Identity;
+
         Projectile pjt = projectile.GetComponent<Projectile>();
+
+        pjt.SetTowerType(this.towerType);
+        pjt.SetIdentity(enemyIdentity);
+        pjt.SetTargetPos(enemy.position);
+
         pjt.SetDamage(this.Dmg);
         pjt.SetSpeed(this.SpeedProjectile);
 

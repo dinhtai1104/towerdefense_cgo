@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Dmg: 2
   Cooldown: 0.2
-  TowerType: 0
+  TowerType: 1
   RangeAttack: 3
   SpeedProjectile: 7
