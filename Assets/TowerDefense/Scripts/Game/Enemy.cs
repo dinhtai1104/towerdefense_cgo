@@ -35,6 +35,17 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(float dmg)
     {
         health.TakeDamage(dmg);
+
+        // spawn eff
+        ParticleSystem bloodResource = Resources.Load<ParticleSystem>("BloodParticlePrefab");
+        if (bloodResource != null)
+        {
+            ParticleSystem bloodIns = Instantiate(bloodResource);
+            bloodIns.transform.position = transform.position;
+            bloodIns.Play();
+
+            Destroy(bloodIns.gameObject, 2);
+        }
     }
 
     public float GetDmg()

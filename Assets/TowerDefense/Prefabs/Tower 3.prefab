@@ -52,6 +52,7 @@ MonoBehaviour:
   towerSO: {fileID: 11400000, guid: f1f3f8b48b37dc549a724ed1bb3ea5c9, type: 2}
   towerData: {fileID: 11400000, guid: 7826e16d81017684fac0ce77fdb8cc5b, type: 2}
   ShotPos: {fileID: 152360215209716396}
+  auraEff: {fileID: 0}
   attackComponent: {fileID: 152360213329658780}
 --- !u!114 &152360213329658780
 MonoBehaviour:
@@ -71,6 +72,7 @@ MonoBehaviour:
   SpeedProjectile: 0
   AttackType: 0
   Projectile: {fileID: 4453438025390417739, guid: d61f5757bff65c446bd8a83dbabb3c4f, type: 3}
+  towerType: 0
 --- !u!50 &152360213329658851
 Rigidbody2D:
   serializedVersion: 4
