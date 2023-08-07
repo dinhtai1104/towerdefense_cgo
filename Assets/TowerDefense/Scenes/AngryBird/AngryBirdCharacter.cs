@@ -4,21 +4,40 @@ using UnityEngine;
 
 public class AngryBirdCharacter : MonoBehaviour
 {
-    public Rigidbody2D rb;
-    // Start is called before the first frame update
-    void Start()
+    public AngryBirdLine line;
+
+    private Vector3 startPoint;
+
+    private void Start()
     {
-        rb.velocity = new Vector2(10, 2);
+        startPoint = transform.position;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnMouseUp()
     {
-        
+        Vector3 direction = transform.position - startPoint;
+        direction *= -1;
+
+        GetComponent<Rigidbody2D>().gravityScale = 1;
+        GetComponent<Rigidbody2D>().velocity = direction * 2;
+    }
+
+    private void OnMouseDrag()
+    {
+        Debug.Log("Mouse Drag");
+
+        Vector3 mousePosition = Input.mousePosition;
+        Vector3 targetPosition = Camera.main.ScreenToWorldPoint(mousePosition);
+        targetPosition.z = 0;
+
+        transform.position = targetPosition;
+
+        Vector3 position = transform.position;
+        line.SetPosition(1, position);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        AngryBirdCamera.Instance.ChangeState(AngryBirdCameraMoveType.Begin);
+        //AngryBirdCamera.Instance.ChangeState(AngryBirdCameraMoveType.Begin);
     }
 }
