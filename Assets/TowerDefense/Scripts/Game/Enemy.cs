@@ -20,6 +20,7 @@ public class Enemy : MonoBehaviour
     private void Awake()
     {
         Identity = id++;
+        Init();
     }
 
     public void SetData(EnemySO data)
